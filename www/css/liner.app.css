@@ -1,0 +1,63 @@
+.trabajo {
+	background-color: transparent;
+	color: antiquewhite;
+}
+
+.configuracion-item {
+	background-color: transparent;
+	color: antiquewhite;
+}
+
+.configuracion-barra {
+	background-color: transparent;
+	color: antiquewhite;
+}
+
+.button-block.button-block {
+	border-color: azure;
+	border-style: solid;
+	border-width: 1px;
+	opacity: 0.85;
+}
+
+.control-circular {
+	background-color: #2e3642;
+	opacity: 0.9;
+	background-blend-mode:hard-light;
+}
+
+.control-circular:active {
+	background-color: gainsboro;
+	opacity: 1;
+	background-blend-mode:hard-light;
+}
+
+.flecha {
+	color: azure
+}
+
+.recuadro-botones {
+	border-style: double;
+	border-width: 5px 5px;
+	border-radius: 50px;
+	border-color: azure;
+	background-color: black;
+	opacity: 0.8;
+}
+
+.opcion-manual {
+	background-color:black;
+	opacity: 0.7;
+	color:azure;
+}
+
+.item-content.disable-pointer-events {
+	color: white;
+	background-color: black;
+}
+
+.item-radio input:checked + .radio-content .item-content {
+	color: white;
+	background-color: black;
+	opacity: 0.9;
+}
