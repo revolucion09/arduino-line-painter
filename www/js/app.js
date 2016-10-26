@@ -5,13 +5,13 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives','app.services',])
+angular.module('app', ['ionic','ngCordova','app.controllers', 'app.routes', 'app.directives','app.services',])
 
 .config(function($ionicConfigProvider){
   
 })
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $cordovaBluetoothSerial) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -24,4 +24,14 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
       StatusBar.styleDefault();
     }
   });
+	$ionicPlatform.ready(function() {
+		$cordovaBluetoothSerial.isEnabled().then(
+			function(s) {
+				console.log('bluetooth enabled');
+			},
+			function(e) {
+				console.log('bluetooth not enabled');
+			}
+		);
+	});
 })

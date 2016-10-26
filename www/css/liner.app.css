@@ -61,3 +61,40 @@
 	background-color: black;
 	opacity: 0.9;
 }
+
+.popup-container.active .popup {
+	border-radius: 10px;
+}
+
+.popup-head {
+	background-color: darkgray;
+	opacity: 0.8;
+}
+
+.popup-body {
+	background-color: black;
+	opacity: 0.8;
+}
+
+.popup-buttons {
+	background-color: black;
+	opacity: 0.8;
+}
+
+.popup-buttons .button:last-child {
+	background-color: darkgray;
+	opacity: 0.8;
+	color: black;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.contenedor-dispositivos {
+	background-color: white;
+	opacity: 0.8;
+	border-radius: 10px;
+}
+
+.boton-conexion {
+	background-color: darkgrey;
+}

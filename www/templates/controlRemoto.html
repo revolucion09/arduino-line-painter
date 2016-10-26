@@ -1,8 +1,8 @@
 <ion-view title="Control Remoto" id="page2" style="background-color:#6E6E6E;">
   <ion-content padding="true" style="background: url(img/EjgV8rwYRdqXvMAGyzK5_arduino-liner-4.jpg) no-repeat center;background-size:cover;" class="has-header">
 		<div id="controlRemoto-button-bar2" class="button-bar">
-      <button id="controlRemoto-button14" style="font-size:15px;" class="button button-positive button-block icon ion-bluetooth"> Activar</button>
-      <button id="controlRemoto-button15" style="font-size:15px;" class="button button-positive button-block">Connectar</button>
+      <button id="controlRemoto-button14" style="font-size:15px;" class="button button-positive button-block icon ion-bluetooth" on-release="btEnable()"> Activar</button>
+      <button id="controlRemoto-button15" style="font-size:15px;" class="button button-positive button-block" on-release="btList()">Connectar</button>
       <button id="controlRemoto-button16" style="font-size:15px;" class="button button-dark button-block">Desconectar</button>
     </div>
 		<div class="row">
@@ -64,7 +64,8 @@
         <input type="range" value="70" min="10" max="100" step="5">
       </ion-item>
     </form>
-		<div class="bar bar-footer padding-vertical" style="background-color:transparent" style="margin-bottom:40px">
+		<div id="bt-list">{{content}}</div>
+		<div class="padding-vertical" style="background-color:transparent" style="margin-bottom:40px">
 			<div class="row">
 				<button id="controlRemoto-button17" style="font-size:15px;margin-right:10px" class="button button-assertive button-block col col-offset-50 icon ion-record"><strong> Grabar</strong></button>
 				<button id="controlRemoto-button18" style="font-size:15px;" class="button button-positive button-block col icon ion-ios-undo"><strong> Restablecer</strong></button>

@@ -1,0 +1,11 @@
+<div class="item item-button-right contenedor-dispositivos" ng-repeat="device in foundDevices" style="margin-bottom:3px;margin-top:3px">
+	<div ng-if="device.name">
+		{{device.name}}
+	</div>
+	<div ng-if="!device.name">
+		{{device.address}}
+	</div>
+	<button class="button boton-conexion" on-release="btConnect('{{device.address}}')">
+		<i class="icon ion-arrow-swap"></i>
+	</button>
+</div>
