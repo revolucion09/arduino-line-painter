@@ -1,41 +1,38 @@
 <ion-view title="Control Remoto" id="page2" style="background-color:#6E6E6E;">
   <ion-content padding="true" style="background: url(img/EjgV8rwYRdqXvMAGyzK5_arduino-liner-4.jpg) no-repeat center;background-size:cover;" class="has-header">
 		<div id="controlRemoto-button-bar2" class="button-bar">
-      <button id="controlRemoto-button14" style="font-size:15px;" class="button button-positive button-block icon ion-bluetooth" on-release="btEnable()"> Activar</button>
-      <button id="controlRemoto-button15" style="font-size:15px;" class="button button-positive button-block" on-release="btList()">Connectar</button>
-      <button id="controlRemoto-button16" style="font-size:15px;" class="button button-dark button-block" on-release="btDisconnect()">Desconectar</button>
+      <button id="controlRemoto-button14" style="font-size:12px;" class="button button-positive button-block icon ion-bluetooth" on-release="btEnable()"> Activar</button>
+      <button id="controlRemoto-button15" style="font-size:12px;" class="button button-positive button-block" on-release="btList()">Connectar</button>
+      <button id="controlRemoto-button16" style="font-size:12px;" class="button button-dark button-block" on-release="btDisconnect()">Desconectar</button>
     </div>
 		<div class="row">
-			<div class="col-50 col-offset-10 recuadro-botones padding-vertical" style="margin-bottom:20px;margin-top:10px">
-				<div class="row button-bar padding-vertical">
-					<i class="col col-20"></i>
-					<button class="button-layout col col-60 control-circular" on-release="btInstruction('F')">
-					<i class="ion-arrow-up-c flecha" style="font-size:50px"></i>
+			<div class="col-50 col-offset-5 recuadro-botones padding-vertical" style="margin-bottom:20px;margin-top:10px">
+				<div class="row button-bar padding-vertical" style="margin-top:7px">
+					<button class="button-layout col col-60 col-offset-20 control-circular" style="padding-right:4px" on-release="btInstruction('F')">
+					<i class="ion-arrow-up-c flecha" style="font-size:20px"></i>
 					</button>
-					<i class="col"></i>
-				</div>
-				<div class="row button-bar padding">
-					<i class="col col-10"></i>
-					<button class="button-layout col col-40 control-circular" style="margin-right:4px" on-release="btInstruction('L')">
-					<i class="ion-arrow-left-c flecha" style="font-size:50px"></i>
-					</button>
-					<button class="button-layout col col-40 control-circular" on-release="btInstruction('R')">
-					<i class="ion-arrow-right-c flecha" style="font-size:50px"></i>
-					</button>
-					<i class="col col-10"></i>
 				</div>
 				<div class="row button-bar padding-vertical">
-					<i class="col col-20"></i>
-					<button class="button-layout col col-60 control-circular" on-release="btInstruction('B')">
-					<i class="ion-arrow-down-c flecha" style="font-size:50px"></i>
+					<button class="button-layout col col-20 col-offset-20 control-circular">
+					<i class="ion-arrow-left-c flecha" style="font-size:20px" on-release="btInstruction('L')"></i>
 					</button>
-					<i class="col"></i>
+					<button class="button-layout col col-20 control-circular">
+					<i class="ion-android-remove-circle flecha" style="font-size:20px" on-release="btInstruction('S')"></i>
+					</button>
+					<button class="button-layout col col-20 col-offset-20 control-circular" style="margin-left:0px" on-release="btInstruction('R')">
+					<i class="ion-arrow-right-c flecha" style="font-size:20px"></i>
+					</button>
+				</div>
+				<div class="row button-bar padding-vertical">
+					<button class="button-layout col col-60 col-offset-20 control-circular" on-release="btInstruction('B')">
+					<i class="ion-arrow-down-c flecha" style="font-size:20px"></i>
+					</button>
 				</div>
 			</div>
-			<div class="col" style="margin-bottom:20px;margin-top:10px;margin-left:20px">
-				<ul class="list padding-vertical" style="margin-top:25px">
+			<div class="col">
+				<ul class="list">
 					<li class="item item-toggle opcion-manual">
-						<strong>Sostener</strong>
+						<strong style="font-size:12px">Sostener</strong>
 					<label class="toggle">
 					 <input type="checkbox" ng-checked="true">
 					 <div class="track">
@@ -44,7 +41,7 @@
 					</label>
 					</li>
 					<li class="item item-toggle opcion-manual">
-						<strong>Pintar</strong>
+						<strong style="font-size:12px">Pintar</strong>
 					<label class="toggle">
 					 <input type="checkbox" ng-checked="false">
 					 <div class="track">
@@ -52,24 +49,21 @@
 					 </div>
 					</label>
 					</li>
-					<li class="opcion-manual" style="background-color: black">
-							<ion-radio ng-model="choice" ng-value="'A'" ng-checked="true"><strong>Blanco</strong></ion-radio>
-							<ion-radio ng-model="choice" ng-value="'B'"><strong>Amarillo</strong></ion-radio>
-					</li>		
+					<ion-list class="opcion-manual" style="background-color: black">
+							<ion-radio ng-model="choice" ng-value="'A'"><strong style="font-size:12px">Blanco</strong></ion-radio>
+							<ion-radio ng-model="choice" ng-value="'B'"><strong style="font-size:12px">Amarillo</strong></ion-radio>
+					</ion-list>		
 				</ul>
 			</div>
 		</div>
-    <form id="controlRemoto-form4 padding-vertical" class="list">
-      <ion-item class="range range-dark" id="controlRemoto-range3" style="background-color: black; opacity: 0.7; color: antiquewhite; border-width:2px"><strong>Velocidad</strong>
+    <form id="controlRemoto-form4" class="list">
+      <ion-item class="range range-dark" id="controlRemoto-range3" style="background-color: black; opacity: 0.7; color: antiquewhite; border-width:2px; font-size:12px; height:35px; margin-bottom:20px"><strong>Velocidad</strong>
         <input type="range" value="70" min="10" max="100" step="5">
       </ion-item>
     </form>
-		<div id="bt-list">{{content}}</div>
-		<div class="padding-vertical" style="background-color:transparent" style="margin-bottom:40px">
-			<div class="row">
-				<button id="controlRemoto-button17" style="font-size:15px;margin-right:10px" class="button button-assertive button-block col col-offset-50 icon ion-record"><strong> Grabar</strong></button>
-				<button id="controlRemoto-button18" style="font-size:15px;" class="button button-positive button-block col icon ion-ios-undo" on-release="btInstruction('S')"><strong> Restablecer</strong></button>
-			</div>
+		<div class="bar bar-footer bar-dark padding-vertical">
+			<button id="controlRemoto-button17" style="font-size:12px;margin-right:10px" class="button button-assertive icon ion-record"><strong> Grabar</strong></button>
+			<button id="controlRemoto-button18" style="font-size:12px;" class="button button-positive icon ion-ios-undo"><strong> Restablecer</strong></button>
 		</div>
   </ion-content>
 </ion-view>

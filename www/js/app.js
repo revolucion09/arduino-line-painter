@@ -8,7 +8,7 @@
 angular.module('app', ['ionic','ngCordova','app.controllers', 'app.routes', 'app.directives','app.services',])
 
 .config(function($ionicConfigProvider){
-  
+  $ionicConfigProvider.tabs.position('top');
 })
 
 .run(function($ionicPlatform, $cordovaBluetoothSerial) {
