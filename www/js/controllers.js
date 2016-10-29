@@ -21,15 +21,15 @@ function ($scope, $stateParams, $ionicPopup, $ionicLoading, $cordovaBluetoothSer
   };
 	
 	function openBtListPopup(foundDevices) {
-		$scope.foundDevices = foundDevices;
-		alertPopup = $ionicPopup.alert({
-			title: 'Dispositivos',
-			templateUrl: 'templates/bluetoothListPopup.html',
-			scope: $scope
-   });
-	 alertPopup.then(function(res) {
-     console.log('Popup dismissed');
-   });
+        $scope.foundDevices = foundDevices;
+        alertPopup = $ionicPopup.alert({
+            title: 'Dispositivos',
+            templateUrl: 'templates/bluetoothListPopup.html',
+            scope: $scope
+        });
+        alertPopup.then(function(res) {
+        console.log('Popup dismissed');
+        });
 	};
 	
 	function closeBtListPopup(foundDevices) {
@@ -40,21 +40,35 @@ function ($scope, $stateParams, $ionicPopup, $ionicLoading, $cordovaBluetoothSer
 	$scope.foundDevices = [];
 	
 	$scope.btList = function() {
+        
 		console.log('called bt search');
+		$scope.foundDevices = [];
 		showLoading();
-		/*
+        
 		btManager.discoverUnpaired().then(
 			function(s) {
 				console.log('discover: ' + JSON.stringify(s));
 				hideLoading();
 				openBtListPopup(s);
 			},
-			function(e) {console.log('discover: ' + e)}
+			function(e) {
+                console.log('discover: ' + e);
+            }
 		);
-		*/
-		hideLoading();
-		openBtListPopup([{'address': "6C:94:F8:E4:99:91", 'name': 'Celu Saif'}, {'address': "9D:97:A8:E8:99:95"}]);
+		//openBtListPopup([{'address': "6C:94:F8:E4:99:91", 'name': 'Celu Saif'}, {'address': "9D:97:A8:E8:99:95"}]);
 	};
+    
+    $scope.btInstruction = function(data) {
+        console.log('called bt forward');
+        btManager.write(data).then(
+            function(s) {
+                console.log('write success: ' + data);
+            },
+            function(e) {
+                console.log('write failure: ' + e);
+            }
+        );
+    };
 	
 	$scope.btEnable = function() {
 		console.log('called bt enable');
@@ -66,12 +80,12 @@ function ($scope, $stateParams, $ionicPopup, $ionicLoading, $cordovaBluetoothSer
 	
 	$scope.btConnect = function(mac) {
 		console.log('called bt connect on: ' + mac);
-		/*
+		
 		btManager.connect(mac).then(
 			function(s) {console.log('bt connected')},
 			function(e) {console.log('bt not connected')}
 		);
-		*/
+		
 		closeBtListPopup();
 	}
 	

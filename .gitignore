@@ -2,3 +2,4 @@
 /node_modules
 .editorconfig
 .bowerrc
+.brackets.json

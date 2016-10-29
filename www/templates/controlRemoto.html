@@ -3,30 +3,30 @@
 		<div id="controlRemoto-button-bar2" class="button-bar">
       <button id="controlRemoto-button14" style="font-size:15px;" class="button button-positive button-block icon ion-bluetooth" on-release="btEnable()"> Activar</button>
       <button id="controlRemoto-button15" style="font-size:15px;" class="button button-positive button-block" on-release="btList()">Connectar</button>
-      <button id="controlRemoto-button16" style="font-size:15px;" class="button button-dark button-block">Desconectar</button>
+      <button id="controlRemoto-button16" style="font-size:15px;" class="button button-dark button-block" on-release="btDisconnect()">Desconectar</button>
     </div>
 		<div class="row">
 			<div class="col-50 col-offset-10 recuadro-botones padding-vertical" style="margin-bottom:20px;margin-top:10px">
 				<div class="row button-bar padding-vertical">
 					<i class="col col-20"></i>
-					<button class="button-layout col col-60 control-circular">
+					<button class="button-layout col col-60 control-circular" on-release="btInstruction('F')">
 					<i class="ion-arrow-up-c flecha" style="font-size:50px"></i>
 					</button>
 					<i class="col"></i>
 				</div>
 				<div class="row button-bar padding">
 					<i class="col col-10"></i>
-					<button class="button-layout col col-40 control-circular" style="margin-right:4px">
+					<button class="button-layout col col-40 control-circular" style="margin-right:4px" on-release="btInstruction('L')">
 					<i class="ion-arrow-left-c flecha" style="font-size:50px"></i>
 					</button>
-					<button class="button-layout col col-40 control-circular">
+					<button class="button-layout col col-40 control-circular" on-release="btInstruction('R')">
 					<i class="ion-arrow-right-c flecha" style="font-size:50px"></i>
 					</button>
 					<i class="col col-10"></i>
 				</div>
 				<div class="row button-bar padding-vertical">
 					<i class="col col-20"></i>
-					<button class="button-layout col col-60 control-circular">
+					<button class="button-layout col col-60 control-circular" on-release="btInstruction('B')">
 					<i class="ion-arrow-down-c flecha" style="font-size:50px"></i>
 					</button>
 					<i class="col"></i>
@@ -68,7 +68,7 @@
 		<div class="padding-vertical" style="background-color:transparent" style="margin-bottom:40px">
 			<div class="row">
 				<button id="controlRemoto-button17" style="font-size:15px;margin-right:10px" class="button button-assertive button-block col col-offset-50 icon ion-record"><strong> Grabar</strong></button>
-				<button id="controlRemoto-button18" style="font-size:15px;" class="button button-positive button-block col icon ion-ios-undo"><strong> Restablecer</strong></button>
+				<button id="controlRemoto-button18" style="font-size:15px;" class="button button-positive button-block col icon ion-ios-undo" on-release="btInstruction('S')"><strong> Restablecer</strong></button>
 			</div>
 		</div>
   </ion-content>
