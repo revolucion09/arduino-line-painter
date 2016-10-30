@@ -26,16 +26,11 @@
 	background-blend-mode:hard-light;
 }
 
-.control-circular:active {
-	background-color: gainsboro;
-	opacity: 1;
-	background-blend-mode:hard-light;
-}
-
 .flecha {
 	color: azure
 }
 
+/*
 .recuadro-botones {
 	border-style: double;
 	border-width: 5px 5px;
@@ -44,22 +39,26 @@
 	background-color: black;
 	opacity: 0.8;
 }
+*/
 
 .opcion-manual {
 	background-color:black;
-	opacity: 0.7;
+	opacity: 0.85;
 	color:azure;
+	
 }
 
 .item-content.disable-pointer-events {
 	color: white;
 	background-color: black;
+	
 }
 
 .item-radio input:checked + .radio-content .item-content {
 	color: white;
 	background-color: black;
 	opacity: 0.9;
+	
 }
 
 .popup-container.active .popup {
@@ -96,5 +95,5 @@
 }
 
 .boton-conexion {
-	background-color: darkgrey;
+	background-color: darkgray;
 }

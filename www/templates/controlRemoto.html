@@ -3,67 +3,64 @@
 		<div id="controlRemoto-button-bar2" class="button-bar">
       <button id="controlRemoto-button14" style="font-size:12px;" class="button button-positive button-block icon ion-bluetooth" on-release="btEnable()"> Activar</button>
       <button id="controlRemoto-button15" style="font-size:12px;" class="button button-positive button-block" on-release="btList()">Connectar</button>
-      <button id="controlRemoto-button16" style="font-size:12px;" class="button button-dark button-block" on-release="btDisconnect()">Desconectar</button>
+      <button id="controlRemoto-button16" style="font-size:12px;" class="button button-royal button-block" on-release="btDisconnect()">Desconectar</button>
     </div>
 		<div class="row">
-			<div class="col-50 col-offset-5 recuadro-botones padding-vertical" style="margin-bottom:20px;margin-top:10px">
-				<div class="row button-bar padding-vertical" style="margin-top:7px">
-					<button class="button-layout col col-60 col-offset-20 control-circular" style="padding-right:4px" on-release="btInstruction('F')">
-					<i class="ion-arrow-up-c flecha" style="font-size:20px"></i>
+			<div class="col">
+				<div class="row button-bar padding-bottom">
+					<button class="button-layout col control-circular" style="padding-right:4px;border-top-left-radius:50px;border-top-right-radius:50px" on-release="btInstruction('F')">
+					<i class="ion-arrow-up-c flecha" style="font-size:20px;"></i>
 					</button>
 				</div>
 				<div class="row button-bar padding-vertical">
-					<button class="button-layout col col-20 col-offset-20 control-circular">
+					<button class="button-layout col control-circular">
 					<i class="ion-arrow-left-c flecha" style="font-size:20px" on-release="btInstruction('L')"></i>
 					</button>
-					<button class="button-layout col col-20 control-circular">
+					<button class="button-layout col control-circular">
 					<i class="ion-android-remove-circle flecha" style="font-size:20px" on-release="btInstruction('S')"></i>
 					</button>
-					<button class="button-layout col col-20 col-offset-20 control-circular" style="margin-left:0px" on-release="btInstruction('R')">
+					<button class="button-layout col control-circular" style="margin-left:0px" on-release="btInstruction('R')">
 					<i class="ion-arrow-right-c flecha" style="font-size:20px"></i>
 					</button>
 				</div>
-				<div class="row button-bar padding-vertical">
-					<button class="button-layout col col-60 col-offset-20 control-circular" on-release="btInstruction('B')">
+				<div class="row button-bar padding-top">
+					<button class="button-layout col control-circular" style="border-bottom-left-radius:50px;border-bottom-right-radius:50px" on-release="btInstruction('B')">
 					<i class="ion-arrow-down-c flecha" style="font-size:20px"></i>
 					</button>
 				</div>
 			</div>
-			<div class="col">
-				<ul class="list">
-					<li class="item item-toggle opcion-manual">
-						<strong style="font-size:12px">Sostener</strong>
-					<label class="toggle">
+		</div>
+    <form id="controlRemoto-form4" class="list">
+			<ul class="list">
+					<li style="background-color: #2e3642;color:antiquewhite" class="item item-toggle opcion-manual">
+						<strong>Pintar</strong>
+					<label class="toggle toggle-success">
 					 <input type="checkbox" ng-checked="true">
 					 <div class="track">
 						 <div class="handle"></div>
 					 </div>
 					</label>
 					</li>
-					<li class="item item-toggle opcion-manual">
-						<strong style="font-size:12px">Pintar</strong>
-					<label class="toggle">
-					 <input type="checkbox" ng-checked="false">
-					 <div class="track">
-						 <div class="handle"></div>
-					 </div>
-					</label>
+					<li class="opcion-manual">
+						<label class="item item-input item-select" style="color:antiquewhite;background-color: #2e3642;">
+						<div style="color:antiquewhite" class="input-label">
+							<strong>Color</strong>
+						</div>
+						<select style="color:antiquewhite;background-color: #2e3642;">
+							<option>Blanco</option>
+							<option selected>Amarillo</option>
+							<option>Rojo</option>
+						</select>
+						</label>
 					</li>
-					<ion-list class="opcion-manual" style="background-color: black">
-							<ion-radio ng-model="choice" ng-value="'A'"><strong style="font-size:12px">Blanco</strong></ion-radio>
-							<ion-radio ng-model="choice" ng-value="'B'"><strong style="font-size:12px">Amarillo</strong></ion-radio>
-					</ion-list>		
+					<li class="item range range-dark" id="controlRemoto-range3" style="opacity: 0.7; color: antiquewhite;background-color: #2e3642;"><strong>Velocidad</strong>
+					<input type="range" value="70" min="10" max="100" step="5">
+					</li>
 				</ul>
-			</div>
-		</div>
-    <form id="controlRemoto-form4" class="list">
-      <ion-item class="range range-dark" id="controlRemoto-range3" style="background-color: black; opacity: 0.7; color: antiquewhite; border-width:2px; font-size:12px; height:35px; margin-bottom:20px"><strong>Velocidad</strong>
-        <input type="range" value="70" min="10" max="100" step="5">
-      </ion-item>
     </form>
-		<div class="bar bar-footer bar-dark padding-vertical">
-			<button id="controlRemoto-button17" style="font-size:12px;margin-right:10px" class="button button-assertive icon ion-record"><strong> Grabar</strong></button>
-			<button id="controlRemoto-button18" style="font-size:12px;" class="button button-positive icon ion-ios-undo"><strong> Restablecer</strong></button>
+		<div class="bar bar-footer bar-dark" style="opacity:0.9; border-top-style:solid">
+			<button id="controlRemoto-button17" style="font-size:15px;margin-right:10px" class="button button-assertive icon ion-record"><strong> Grabar</strong></button>
+			<button id="controlRemoto-button18" style="font-size:15px;" class="button button-positive icon ion-ios-undo"><strong> Restablecer</strong></button>
 		</div>
   </ion-content>
 </ion-view>
